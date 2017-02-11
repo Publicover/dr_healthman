@@ -1,2 +1,16 @@
 <h1>Entries#show</h1>
 <p>Find me in app/views/entries/show.html.erb</p>
+
+<center>
+
+  <p>
+    <strong> DAY </strong>
+    <%= @entry.day %>
+  </p>
+
+  <br>
+
+  <%= link_to "ENTRIES INDEX", entries_path %> <br>
+  <%= link_to "FRONT PAGE DASHBOARD", root_path %>
+
+</center>
