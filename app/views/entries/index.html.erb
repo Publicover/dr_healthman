@@ -1,0 +1,31 @@
+<center>
+<h1> Index </h1>
+
+<h1>ALL ENTRIES</h1>
+<br>
+<center>
+  <table>
+    <tr>
+      <th>Day</th>
+    </tr>
+
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.day %></td>
+        <td><%= link_to 'SHOW', entry_path(entry) %></td>
+        <td><%= link_to 'EDIT', edit_entry_path(entry) %></td>
+        <td><%= link_to 'DESTROY', entry_path(entry),
+                method: :delete,
+                data: { confirm: 'OK, well, just be careful.' } %></td>
+      </tr>
+    </tr>
+  <% end %>
+  </table>
+</center>
+
+<br>
+<p>
+<%= link_to "HOME INDEX", entries_path %> <br>
+<%= link_to "NEW ENTRY", new_entry_path %> <br>
+<%= link_to "FRONT PAGE DASHBOARD", root_path %>
+</center>

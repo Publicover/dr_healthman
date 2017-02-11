@@ -1,0 +1,28 @@
+<center>
+<%= form_for @entry do |f| %>
+
+  <% if @entry.errors.any? %>
+
+    <div id="error_explanation">
+      <p>
+        <%= pluralize(@entry.errors.count, "error") %> prohibited
+        this article from being saved:
+      </p>
+      <% @entry.errors.full_messages.each do |msg| %>
+        <li><center><%= msg %></li>
+      <% end %>
+    </div>
+
+  <% end %>
+
+  <p>
+    <%= f.label "Day" %><br>
+    <%= f.date_field :date %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+</center>
