@@ -85,3 +85,9 @@
  #just-black {
   color: black;
  }
+
+ #hidden-food-form {
+   /*visibility: hidden;
+   visibility: collapse;*/
+   display: none;
+ }

@@ -20,8 +20,11 @@
       </p> -->
     <% end %>
 
-  <h4> Add some calorie counts </h4>
+  <button class="unhide-form"> Add some calorie counts </button>
 
+  <!-- <h4> Add some calorie counts </h4> -->
+
+  <div id="hidden-food-form">
   <%= form_for ([@entry, @entry.foods.build]) do |f| %>
     <p>
       <%= f.label :name %> <br>
@@ -34,10 +37,10 @@
 
     <%= f.submit %>
   <% end %>
-
+  </div>
   <br>
 
-  <%= link_to "ENTRIES INDEX", entries_path %> <br>
+  <br><%= link_to "ENTRIES INDEX", entries_path %> <br>
   <%= link_to "FRONT PAGE DASHBOARD", root_path %>
 
 </center>

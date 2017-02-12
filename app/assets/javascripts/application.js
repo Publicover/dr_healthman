@@ -14,3 +14,33 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// $(document).ready(function() {
+//
+//   $(".unhide-form").on ({
+//
+//     click: function() {
+//       $(this).css("color", "white");
+//     }
+//
+//     mouseenter: function() {
+//     	$(this).css("color", "white");
+//     }
+//
+//   });
+
+$(document).ready(function() {
+
+  $(".unhide-form").on ({
+
+    // mouseenter: function() {
+    //   $(this).css("color", "white");
+    // }
+
+    click: function() {
+      // $("#hidden-food-form").css("visibility", "visible");
+      $("#hidden-food-form").slideToggle("slow");
+    }
+
+  })
+});
