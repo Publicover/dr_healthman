@@ -1,28 +1,26 @@
 <h1>Entries#show</h1>
 <p>Find me in app/views/entries/show.html.erb</p>
 
+<% total_cal = @entry.foods.sum(:calorie_count) %>
+
 <center>
 
   <p>
     <strong> DAY </strong>
-    <%= @entry.day %>
+      <p>
+        <%= @entry.day.strftime("%A, %B %d, %Y") %>
+      </p>
   </p>
   <p>
     <strong> FOOD </strong>
     <% @entry.foods.each do |food| %>
       <p>
-        <!-- <strong>Name</strong> -->
         <%= food.name %> | <%= food.calorie_count%>
       </p>
-      <!-- <p>
-        <strong>Calorie Count</strong>
-        <%= food.calorie_count %>
-      </p> -->
+  </p>
     <% end %>
 
   <button class="unhide-form"> Add some calorie counts </button>
-
-  <!-- <h4> Add some calorie counts </h4> -->
 
   <div id="hidden-food-form">
   <%= form_for ([@entry, @entry.foods.build]) do |f| %>
@@ -41,6 +39,15 @@
   <br>
 
   <br><%= link_to "ENTRIES INDEX", entries_path %> <br>
-  <%= link_to "FRONT PAGE DASHBOARD", root_path %>
+  <%= link_to "FRONT PAGE DASHBOARD", root_path %> <br>
+
+  <h2> DAILY TOTAL </h2>
+  <p>
+    <h3><%= total_cal %></h3>
+  </p>
+  <h2> CALORIES LEFT </h2>
+  <p>
+    <h3><%= 2_000 - total_cal %></h3>
+  </p>
 
 </center>
