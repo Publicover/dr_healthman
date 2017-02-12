@@ -7,6 +7,33 @@
     <strong> DAY </strong>
     <%= @entry.day %>
   </p>
+  <p>
+    <strong> FOOD </strong>
+    <% @entry.foods.each do |food| %>
+      <p>
+        <strong>Name</strong>
+        <%= food.name %>
+      </p>
+      <p>
+        <strong>Calorie Count</strong>
+        <%= food.calorie_count %>
+      </p>
+    <% end %>
+
+  <h2> Add some calorie counts </h2>
+
+  <%= form_for ([@entry, @entry.foods.build]) do |f| %>
+    <p>
+      <%= f.label :name %> <br>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :calorie_count %> <br>
+      <%= f.number_field :calorie_count %>
+    </p>
+
+    <%= f.submit %>
+  <% end %>
 
   <br>
 
