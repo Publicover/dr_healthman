@@ -48,5 +48,5 @@ class EntriesController < ApplicationController
     def entry_params
       params.require(:entry).permit(:day)
     end
-    
+
 end
