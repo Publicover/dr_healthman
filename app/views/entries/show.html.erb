@@ -13,11 +13,13 @@
   </p>
   <p>
     <strong> FOOD </strong>
+  </p>
     <% @entry.foods.each do |food| %>
       <p>
-        <%= food.name %> | <%= food.calorie_count%>
+        <%= food.name %> | <%= food.calorie_count %> 
+        <%= link_to "delete", [@entry, food], :method => :delete,
+            data: { confirm: "Know what you're doing?" } %>
       </p>
-  </p>
     <% end %>
 
   <button class="unhide-form"> Add some calorie counts </button>
