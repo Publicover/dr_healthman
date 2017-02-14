@@ -6,6 +6,9 @@ class EntriesController < ApplicationController
 
   def show
     @entry = Entry.find(params[:id])
+    # unless current_user == @entry.user
+    #   redirect_to(entries_path, notice: "You cannot look at this.") and return
+    # end
   end
 
   def new
